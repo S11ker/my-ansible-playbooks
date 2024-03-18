@@ -1,0 +1,22 @@
+---
+# tasks file for dnf-packages
+
+
+- block:
+  
+  - name: dnf update cache
+    ansible.builtin.dnf:
+      update_cache: true
+
+  - name: dnf upgrade
+    ansible.builtin.dnf:
+      name: "*"
+      state: latest
+
+  - name: dnf autoremove
+    ansible.builtin.dnf: 
+      autoremove: true
+ 
+  delegate_to: 'localhost'
+  run_once: true
+  

@@ -1,0 +1,7 @@
+- name: dnf/apt update, upgrade, autoremove
+  hosts: all
+  become: yes
+
+  roles:
+    - apt-packages
+    - dnf-packages

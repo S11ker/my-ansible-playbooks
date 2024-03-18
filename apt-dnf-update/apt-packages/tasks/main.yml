@@ -1,0 +1,22 @@
+---
+# tasks file for apt-packages
+
+
+- block:
+      
+  - name: apt update cache
+    ansible.builtin.apt:
+      update_cache: yes
+
+  - name: apt upgrade
+    ansible.builtin.apt:
+      name: "*"
+      state: latest
+
+  - name: apt autoremove
+    ansible.builtin.apt:
+      autoremove: yes 
+
+  delegate_to: 'honor'
+  run_once: true
+  
