@@ -1,0 +1,9 @@
+[localhost_group]
+localhost ansible_host=localhost ansible_user=headtr1ck ansible_password=headtail
+
+[honor_group]
+honor ansible_host=192.168.0.104 ansible_user=ghost ansible_password=headtail
+
+[all:children]
+localhost_group
+honor_group

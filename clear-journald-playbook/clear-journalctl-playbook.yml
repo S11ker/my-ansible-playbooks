@@ -1,0 +1,11 @@
+- name: Clear journalctl
+  hosts: all
+  become: yes
+  gather_facts: no
+  
+  tasks:
+  
+    - name: clear journalctl 
+      ansible.builtin.command:
+        cmd: journalctl --vacuum-time=1d
+        
